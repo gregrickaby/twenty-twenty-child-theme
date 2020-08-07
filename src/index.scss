@@ -1,0 +1,16 @@
+.header-footer-group,
+.site-content {
+	contain: content;
+}
+
+article {
+	contain: content;
+	contain-intrinsic-size: 1102px;
+	content-visibility: auto;
+}
+
+.wp-block-code,
+code {
+	font-size: 15px !important;
+	border-radius: 8px !important;
+}

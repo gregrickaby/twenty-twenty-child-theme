@@ -1,0 +1,23 @@
+{
+	"name": "twentytwenty-child",
+	"version": "1.0.0",
+	"description": "A custom child theme for Twenty Twenty.",
+	"scripts": {
+		"build": "wp-scripts build",
+		"dev": "wp-scripts start",
+		"postinstall": "npm run build",
+		"start": "npm run dev",
+		"lint": "npm run lint:js && npm run lint:style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style"
+	},
+	"author": "Greg Rickaby",
+	"license": "GPL-2.0",
+	"dependencies": {
+		"prismjs": "^1.21.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^12.1.1",
+		"babel-plugin-prismjs": "^2.0.1"
+	}
+}
