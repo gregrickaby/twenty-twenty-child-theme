@@ -4,14 +4,14 @@
 
 -   [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/master/packages/scripts)
 -   Code Highlighting with [Prism.js](https://prismjs.com/download.html)
--   Web Vitals metrics with [web-vitals](https://github.com/GoogleChrome/web-vitals/)
+-   Core Web Vitals metrics with [web-vitals](https://github.com/GoogleChrome/web-vitals/)
 
 ## Install
 
-Clone down the website repo and install the dependencies:
+Clone the repo into `wp-content/themes` and install the dependencies:
 
 ```bash
-git@github.com:gregrickaby/gregrickaby-com.git
+git@github.com:gregrickaby/twenty-twenty-child-theme.git
 ```
 
 ```bash
@@ -22,12 +22,14 @@ cd themes/twentytwenty-child
 npm install
 ```
 
+Make sure you have the Twenty Twenty theme installed, and then activate the Twenty Twenty Child.
+
 ## Development
 
-To start HMR:
+To have @wordpress/scripts watch for changes:
 
 ```bash
-npm run dev
+npm run start
 ```
 
 To lint scripts and styles:
