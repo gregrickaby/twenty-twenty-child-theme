@@ -22,6 +22,10 @@ cd themes/twentytwenty-child
 npm install
 ```
 
+```bash
+composer install
+```
+
 Make sure you have the Twenty Twenty theme installed, and then activate the Twenty Twenty Child.
 
 ## Development
