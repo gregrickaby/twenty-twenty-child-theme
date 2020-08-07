@@ -4,6 +4,7 @@
 
 -   [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/master/packages/scripts)
 -   Code Highlighting with [Prism.js](https://prismjs.com/download.html)
+-   Web Vitals metrics with [web-vitals](https://github.com/GoogleChrome/web-vitals/)
 
 ## Install
 
