@@ -6,13 +6,29 @@
 -   Code Highlighting with [Prism.js](https://prismjs.com/download.html)
 -   Core Web Vitals metrics with [web-vitals](https://github.com/GoogleChrome/web-vitals/)
 
-## Install
+## Get The Child Theme
 
-Clone the repo into `wp-content/themes` and install the dependencies:
+### Clone Theme
+
+The first step is getting the child theme into `wp-content/themes`. There are three options:
+
+**Git:**
 
 ```bash
-git@github.com:gregrickaby/twenty-twenty-child-theme.git
+git clone git@github.com:gregrickaby/twenty-twenty-child-theme.git
 ```
+
+**Composer:**
+
+```bash
+composer require gregrickaby/twentytwentychild dev-main
+```
+
+**Download** [the zip](https://github.com/gregrickaby/twenty-twenty-child-theme/archive/main.zip) and place into `wp-content/themes`
+
+### Install
+
+Next, you'll need to change directories into the child theme, and install dependencies:
 
 ```bash
 cd themes/twentytwenty-child
@@ -26,7 +42,12 @@ npm install
 composer install
 ```
 
-Make sure you have the Twenty Twenty theme installed, and then activate the Twenty Twenty Child.
+### Activate
+
+Finally, you'll need to activate the child theme:
+
+1. Make sure you have the Twenty Twenty theme installed
+2. Activate the Twenty Twenty Child theme
 
 ## Development
 
