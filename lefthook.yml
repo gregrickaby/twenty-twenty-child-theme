@@ -5,7 +5,7 @@ pre-commit:
     commands:
         php:
             glob: '*.php'
-            run: composer run lint {staged_files}
+            run: composer run-script lint {staged_files}
         styles:
             glob: '*.{css,scss}'
             run: wp-scripts lint-css:fix {staged_files}
@@ -14,4 +14,4 @@ pre-commit:
             run: wp-scripts lint-js:fix {staged_files}
         markdown:
             glob: '*.{md}'
-            run: wp-scripts lint:md-docs {staged_files}
+            run: wp-scripts lint-md-docs {staged_files}
