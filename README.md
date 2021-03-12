@@ -1,16 +1,18 @@
+<!-- markdownlint-disable MD013 -->
 # Twenty Twenty Child
 
 ## Features
 
--   [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/master/packages/scripts)
--   Code Highlighting with [Prism.js](https://prismjs.com/download.html)
--   Core Web Vitals metrics with [web-vitals](https://github.com/GoogleChrome/web-vitals/)
+1. [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/master/packages/scripts)
+2. Code Highlighting with [Prism.js](https://prismjs.com/download.html)
 
 ## Get The Child Theme
 
 ### Clone Theme
 
-The first step is getting the child theme into `wp-content/themes`. There are three options:
+The first step is getting the child theme into `wp-content/themes`.
+
+There are three options:
 
 **Git:**
 
@@ -74,31 +76,31 @@ npm run build
 ### Workflow
 
 1. Insert a code block into the editor (/code)
-1. Write your code
-1. In the sidebar, click "Advanced".
-1. Insert the following CSS classes:
+2. Write your code
+3. In the sidebar, click "Advanced".
+4. Insert the following CSS classes:
 
-**Language classes**
+### Language classes
 
--   `language-bash`
--   `language-css`
--   `language-graphql`
--   `language-html`
--   `language-js`
--   `language-json`
--   `language-jsx`
--   `language-php`
--   `language-scss`
+- `language-bash`
+- `language-css`
+- `language-graphql`
+- `language-html`
+- `language-js`
+- `language-json`
+- `language-jsx`
+- `language-php`
+- `language-scss`
 
-**Helper classes**
+### Helper classes
 
--   `line-numbers`
--   `match-braces`
+- `line-numbers`
+- `match-braces`
 
 ### PrismJS Config
 
 PrismJS depends on a Babel plugin for [setup and configuration](https://prismjs.com/download.html#). See the `.babelrc` file for options.
 
--   [See supported languages](https://prismjs.com/#supported-languages)
--   [See available plugins](https://prismjs.com/#plugins)
--   [Helpful blog post](https://betterstack.dev/blog/code-highlighting-in-react-using-prismjs/)
+- [See supported languages](https://prismjs.com/#supported-languages)
+- [See available plugins](https://prismjs.com/#plugins)
+- [Helpful blog post](https://betterstack.dev/blog/code-highlighting-in-react-using-prismjs/)

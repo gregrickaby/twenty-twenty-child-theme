@@ -20,10 +20,10 @@ function twentytwentychild_enqueue() {
 	wp_enqueue_style( 'twentytwenty', get_template_directory_uri() . '/style.css', null, wp_get_theme()->parent()->get( 'Version' ) );
 
 	// Enqueue child theme style.
-	wp_enqueue_style( 'twentytwenty-child-style', get_stylesheet_directory_uri() . '/build/index.css', [ 'twentytwenty' ], wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'twentytwenty-child-style', get_stylesheet_directory_uri() . '/build/index.css', array( 'twentytwenty' ), wp_get_theme()->get( 'Version' ) );
 
 	// Enqueue child theme script.
-	wp_enqueue_script( 'twentytwenty-child-script', get_stylesheet_directory_uri() . '/build/index.js', [ 'twentytwenty-js' ], wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'twentytwenty-child-script', get_stylesheet_directory_uri() . '/build/index.js', array( 'twentytwenty-js' ), wp_get_theme()->get( 'Version' ), true );
 	wp_script_add_data( 'twentytwenty-child-script', 'async', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentytwentychild_enqueue' );
@@ -74,21 +74,21 @@ function twentytwentychild_show_exif( $atts ) {
 	}
 
 	// Destructure image meta array and set variables.
-	[
+	array(
 		'aperture'          => $aperture,
 		'camera'            => $camera,
 		'created_timestamp' => $timestamp,
 		'focal_length'      => $focal_length,
 		'iso'               => $iso,
 		'shutter_speed'     => $shutter_speed,
-	] = $data[0]['image_meta'];
+	) = $data[0]['image_meta'];
 
 	ob_start();
 	?>
 
 	<p class="exif-title"><?php esc_html_e( 'Exif Data:', 'twentytwenty' ); ?></p>
 	<ul class="exif-list">
-		<?php echo ( $timestamp ) ? '<li class="exif-item"><strong>' . esc_html__( 'Date Taken', 'twentytwenty' ) . '</strong>: ' . esc_html( date( 'F d, Y', $timestamp ) ) . '</li>' : ''; ?>
+		<?php echo ( $timestamp ) ? '<li class="exif-item"><strong>' . esc_html__( 'Date Taken', 'twentytwenty' ) . '</strong>: ' . esc_html( gmdate( 'F d, Y', $timestamp ) ) . '</li>' : ''; ?>
 		<?php echo ( $camera ) ? '<li class="exif-item"><strong>' . esc_html__( 'Location', 'twentytwenty' ) . '</strong>: ' . wp_kses_post( $atts['location'] ) . '</li>' : ''; ?>
 		<?php echo ( $camera ) ? '<li class="exif-item"><strong>' . esc_html__( 'Camera', 'twentytwenty' ) . '</strong>: ' . esc_html( $camera ) . '</li>' : ''; ?>
 		<?php echo ( $atts['lens'] ) ? '<li class="exif-item"><strong>' . esc_html__( 'Lens', 'twentytwenty' ) . '</strong>: ' . wp_kses_post( $atts['lens'] ) . '</li>' : ''; ?>
