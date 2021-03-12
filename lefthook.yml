@@ -1,0 +1,17 @@
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+
+pre-commit:
+    parallel: true
+    commands:
+        php:
+            glob: '*.php'
+            run: composer run lint {staged_files}
+        styles:
+            glob: '*.{css,scss}'
+            run: wp-scripts lint-css:fix {staged_files}
+        javascript:
+            glob: '*.{js,ts,tsx}'
+            run: wp-scripts lint-js:fix {staged_files}
+        markdown:
+            glob: '*.{md}'
+            run: wp-scripts lint:md-docs {staged_files}

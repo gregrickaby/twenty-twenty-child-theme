@@ -25,6 +25,7 @@
 		"prismjs": "^1.23.0"
 	},
 	"devDependencies": {
+		"@arkweid/lefthook": "^0.7.2",
 		"@wordpress/prettier-config": "^1.0.1",
 		"@wordpress/scripts": "^13.0.3",
 		"babel-plugin-prismjs": "^2.0.1",
