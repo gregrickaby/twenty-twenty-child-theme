@@ -17,5 +17,5 @@ pre-commit:
             glob: '*.{md}'
             run: npm run lint:md:docs {staged_files}
         packagejson:
-            glob: 'package.json'
+            glob: './package.json'
             run: npm run lint:pkg-json {staged_files}
