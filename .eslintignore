@@ -1,8 +1,10 @@
-.cache/
-build/
-node_modules/
-vendor/
+.cache
+build
+build-module
+build-types
+node_modules
+packages/block-serialization-spec-parser/parser.js
+packages/e2e-tests/plugins
+packages/react-native-editor/bundle
+vendor
 !.*.js
-*.config.js
-.eslintrc.js
-.stylelintrc.js
