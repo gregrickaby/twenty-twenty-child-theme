@@ -16,6 +16,9 @@ pre-commit:
         markdown:
             glob: '*.{md}'
             run: npm run lint:md:docs {staged_files}
-        packagejson:
+        other:
+            glob: '*.{yml,json,html}'
+            run: npx prettier --write {staged_files}
+         packagejson:
             glob: './package.json'
             run: npm run lint:pkg-json {staged_files}
