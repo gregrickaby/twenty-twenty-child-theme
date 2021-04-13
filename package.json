@@ -2,7 +2,7 @@
 	"name": "twenty-twenty-child",
 	"version": "1.0.0",
 	"private": true,
-	"description": "A child-theme for Twenty Twenty",
+	"description": "A child-theme for Twenty Twenty.",
 	"author": "Greg Rickaby <gregrickaby@gmail.com>",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
@@ -31,6 +31,7 @@
 		"babel-plugin-prismjs": "^2.0.1",
 		"concurrently": "^6.0.2",
 		"eslint-plugin-eslint-comments": "^3.2.0",
+		"postcss-preset-env": "^6.7.0",
 		"rimraf": "^3.0.2",
 		"stylelint-config-prettier": "^8.0.2"
 	},
