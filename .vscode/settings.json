@@ -1,4 +1,7 @@
 {
-	"css.validate": false,
-	"scss.validate": false
+	"editor.formatOnSave": true,
+	"scss.validate": false,
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

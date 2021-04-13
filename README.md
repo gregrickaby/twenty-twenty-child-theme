@@ -1,4 +1,5 @@
 <!-- markdownlint-disable MD013 -->
+
 # Twenty Twenty Child
 
 ## Features
@@ -10,20 +11,12 @@
 
 ### Clone Theme
 
-The first step is getting the child theme into `wp-content/themes`.
-
-There are three options:
+The first step is getting the child theme into `wp-content/themes`. There are two options:
 
 **Git:**
 
 ```bash
 git clone git@github.com:gregrickaby/twenty-twenty-child-theme.git
-```
-
-**Composer:**
-
-```bash
-composer require gregrickaby/twentytwentychild dev-main
 ```
 
 **Download** [the zip](https://github.com/gregrickaby/twenty-twenty-child-theme/archive/main.zip) and place into `wp-content/themes`
@@ -82,25 +75,25 @@ npm run build
 
 ### Language classes
 
-- `language-bash`
-- `language-css`
-- `language-graphql`
-- `language-html`
-- `language-js`
-- `language-json`
-- `language-jsx`
-- `language-php`
-- `language-scss`
+-   `language-bash`
+-   `language-css`
+-   `language-graphql`
+-   `language-html`
+-   `language-js`
+-   `language-json`
+-   `language-jsx`
+-   `language-php`
+-   `language-scss`
 
 ### Helper classes
 
-- `line-numbers`
-- `match-braces`
+-   `line-numbers`
+-   `match-braces`
 
 ### PrismJS Config
 
 PrismJS depends on a Babel plugin for [setup and configuration](https://prismjs.com/download.html#). See the `.babelrc` file for options.
 
-- [See supported languages](https://prismjs.com/#supported-languages)
-- [See available plugins](https://prismjs.com/#plugins)
-- [Helpful blog post](https://betterstack.dev/blog/code-highlighting-in-react-using-prismjs/)
+-   [See supported languages](https://prismjs.com/#supported-languages)
+-   [See available plugins](https://prismjs.com/#plugins)
+-   [Helpful blog post](https://betterstack.dev/blog/code-highlighting-in-react-using-prismjs/)

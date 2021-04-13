@@ -31,7 +31,8 @@
 		"babel-plugin-prismjs": "^2.0.1",
 		"concurrently": "^6.0.2",
 		"eslint-plugin-eslint-comments": "^3.2.0",
-		"rimraf": "^3.0.2"
+		"rimraf": "^3.0.2",
+		"stylelint-config-prettier": "^8.0.2"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
