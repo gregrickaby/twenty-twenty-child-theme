@@ -9,8 +9,10 @@ article {
 	content-visibility: auto;
 }
 
+/* stylelint-disable */
 .wp-block-code,
 code {
 	font-size: 15px !important;
 	border-radius: 8px !important;
 }
+/* stylelint-enable */
