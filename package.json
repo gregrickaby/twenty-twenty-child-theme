@@ -26,20 +26,23 @@
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.2",
-		"@wordpress/prettier-config": "^1.0.2",
-		"@wordpress/scripts": "^14.1.0",
+		"@wordpress/prettier-config": "^1.0.3",
+		"@wordpress/scripts": "^14.1.1",
 		"babel-plugin-prismjs": "^2.0.1",
+		"clean-webpack-plugin": "^3.0.0",
 		"concurrently": "^6.0.2",
 		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-webpack-plugin": "^2.5.3",
+		"mini-css-extract-plugin": "^0.9.0",
 		"postcss-preset-env": "^6.7.0",
-		"rimraf": "^3.0.2",
-		"stylelint-config-prettier": "^8.0.2"
+		"prettier": "npm:@wordpress/prettier-config@*",
+		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-webpack-plugin": "^2.1.1"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
-		"clean": "rimraf build",
 		"dev": "npm run start",
 		"format-php": "composer run-script format",
 		"format:js": "wp-scripts format-js",
@@ -53,7 +56,7 @@
 		"lint:php": "composer run-script lint",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
-		"start": "npm run clean && wp-scripts start",
+		"start": "wp-scripts start",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js"
 	}
