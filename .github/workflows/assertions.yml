@@ -4,6 +4,13 @@ on:
     pull_request:
         branches: [main, develop]
 
+    workflow_dispatch:
+        inputs:
+            logLevel:
+                description: 'Log level'
+                required: true
+                default: 'warning'
+
 jobs:
     php:
         name: PHP coding standards
