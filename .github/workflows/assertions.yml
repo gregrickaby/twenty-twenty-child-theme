@@ -1,92 +1,92 @@
 name: Assertions
 
 on:
-  push:
-    branches: [main, develop]
+    push:
+        branches: [main, develop]
 
-  pull_request:
-    branches: [main, develop]
+    pull_request:
+        branches: [main, develop]
 
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  php:
-    name: PHP coding standards
-    runs-on: ubuntu-latest
+    php:
+        name: PHP coding standards
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
+        strategy:
+            matrix:
+                php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-versions }}
-          tools: composer:v1, phpcs
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  tools: composer:v1, phpcs
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-composer-
-            ${{ runner.OS }}-
+            - name: Cache dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ${{ steps.composer-cache.outputs.dir }}
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: |
+                      ${{ runner.OS }}-composer-
+                      ${{ runner.OS }}-
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-ansi --no-interaction
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-progress --no-ansi --no-interaction
 
-      - name: Log debug information
-        run: |
-          php --version
-          phpcs -i
-          composer --version
+            - name: Log debug information
+              run: |
+                  php --version
+                  phpcs -i
+                  composer --version
 
-      - name: Lint PHP
-        run: |
-          phpcs -i
-          phpcs ./ --standard=.phpcs.xml --report=summary,source
+            - name: Lint PHP
+              run: |
+                  phpcs -i
+                  phpcs ./ --standard=.phpcs.xml --report=summary,source
 
-  node:
-    name: ESLint and Stylelint Coding Standards
-    runs-on: ubuntu-latest
+    node:
+        name: ESLint and Stylelint Coding Standards
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x]
+        strategy:
+            matrix:
+                node-version: [12.x, 14.x]
 
-    steps:
-      - name: Checkout
-      - uses: actions/checkout@v2
+        steps:
+            - name: Checkout
+            - uses: actions/checkout@v2
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}-
+            - name: Cache dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.OS }}-node-
+                      ${{ runner.OS }}-
 
-      - name: Log debug information
-        run: |
-          npm --version
-          node --version
+            - name: Log debug information
+              run: |
+                  npm --version
+                  node --version
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+            - name: Install dependencies
+              run: npm install --legacy-peer-deps
 
-      - name: Lint JavaScript
-        run: npx eslint --config=.eslintrc.js ./
+            - name: Lint JavaScript
+              run: npx eslint --config=.eslintrc.js ./
 
-      - name: Lint CSS
-        run: npx stylelint --config=stylelint.config.js '**/*.css'
+            - name: Lint CSS
+              run: npx stylelint --config=stylelint.config.js '**/*.css'
