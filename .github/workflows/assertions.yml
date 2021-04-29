@@ -2,39 +2,80 @@ name: Assertions
 
 on:
     push:
-        branches: [main, develop]
+        branches:
+            - main
+            - develop
 
     pull_request:
-        branches: [main, develop]
+        branches:
+            - main
+            - develop
 
     workflow_dispatch:
 
 jobs:
-    node:
-        name: ESLint and Stylelint Coding Standards
+    phpcs:
+        name: PHP
         runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [12.x, 14.x]
-
         steps:
-            - name: Checkout
-            - uses: actions/checkout@v2
+            - name: Checkout repository
+              uses: actions/checkout@v2
 
-            - name: Setup Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Cache dependencies
+            - name: Cache Composer dependencies
               uses: actions/cache@v2
               with:
+                  path: /tmp/composer-cache
+                  key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '7.4'
+                  coverage: none
+                  tools: composer, cs2pr
+
+            - name: Log debug information
+              run: |
+                  php --version
+                  composer --version
+
+            - name: Log PHPCS debug information
+              run: |
+                  php -v
+                  phpcs -i
+
+            - name: Install Composer
+              run: composer install
+
+            - name: Run PHPCS
+              run: phpcs --standard=.phpcs.xml --report=summary,source | cs2pr
+
+    node:
+        name: Node
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Log debug information
+              run: |
+                  npm --version
+                  node --version
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14
+
+            - name: Cache NodeJS modules
+              uses: actions/cache@v2
+              env:
+                  cache-name: cache-node-modules
+              with:
                   path: ~/.npm
-                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.OS }}-node-
-                      ${{ runner.OS }}-
+                  key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
             - name: Log debug information
               run: |
