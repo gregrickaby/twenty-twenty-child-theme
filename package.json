@@ -30,7 +30,7 @@
 		"@wordpress/scripts": "^14.1.1",
 		"babel-plugin-prismjs": "^2.0.1",
 		"clean-webpack-plugin": "^3.0.0",
-		"concurrently": "^6.1.0",
+		"concurrently": "^6.2.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"eslint-webpack-plugin": "^2.5.4",
 		"mini-css-extract-plugin": "^0.9.0",
